@@ -1,8 +1,6 @@
-import Matematica  from './Matematica';
+import validator from 'validator';
 
-let n1: number = 10;
-let n2: number = 2;
+let ip = '127.0.0.1';
 
-console.log(`SOMA: ${Matematica.somar(n1, n2)}`);
-console.log(`SUBTRAÇÃO: ${Matematica.subtrair(n1,n2)}`);
-console.log(`MULTIPLICAÇÃO: ${Matematica.multiplicar(n1,n2)}`);
+console.log(validator.isEmail('loremipsum'));
+console.log(validator.isIP(ip));
