@@ -3,7 +3,7 @@
 # Template engines
 
 <p>Pug</p>
-<p>Mutache</p>
+<p>Mustache</p>
 <p>Edge</p>
 
 # MVC - CONCEITO
@@ -14,3 +14,8 @@
 
 <p> - Separar cada arquivo no seu quadrado</p>
 <p> - Juntar tudo para rodar o sistema</p>
+
+# ORM
+
+<p><b>ORM</b> - Object Relational Mapper<p>
+<p>Mapeamento objeto-relacional</p>
