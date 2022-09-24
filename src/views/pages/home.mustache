@@ -5,9 +5,18 @@
     {{/user.showOld}}
 
     <h2>Produtos</h2>
-
     <ul>
-       {{>partials/productItem}}
+        {{#products}}
+            {{>partials/productItem}}
+        {{/products}}
+    </ul>
+    <hr/>
+
+    <h2>Produtos a partir de 12 reais</h2>
+    <ul>
+        {{#expensives}}
+            {{>partials/productItem}}
+        {{/expensives}}
     </ul>
 
     <ul>
