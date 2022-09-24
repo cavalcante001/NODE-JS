@@ -20,8 +20,6 @@ router.get('/', (req: Request, res: Response) => {
             {title: 'Produto W', price: 20},
         ],
         frasesDoDia: [
-            'Alguma coisa muito legal',
-            'Outra frase qualquer'
         ]
     }
     res.render('home', {
