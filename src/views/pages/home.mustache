@@ -1,10 +1,5 @@
-<html>
-<head>
-    <title>Página Home</title>
-</head>
-<body>
-    <h1>Título da página</h1>
-    <hr/>
+{{>partials/header}}
+  
     {{#user.showOld}}
     Opa {{user.nome}}, você já tem {{user.idade}} anos?
     {{/user.showOld}}
@@ -12,9 +7,7 @@
     <h2>Produtos</h2>
 
     <ul>
-        {{#user.products}}
-            <li>{{title}} - R$ {{price}}</li>
-        {{/user.products}}
+       {{>partials/productItem}}
     </ul>
 
     <ul>
@@ -26,5 +19,4 @@
         {{/frasesDoDia}}
     </ul>
 
-</body>
-</html>
+{{>partials/footer}}
