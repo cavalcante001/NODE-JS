@@ -20,6 +20,24 @@ export const User = sequelize.define<UserInstance>("User", {
             return raw.toUpperCase();
         }
     },
+    lastName: {
+        type: DataTypes.STRING
+    },
+    fullName: {
+        type: DataTypes.VIRTUAL,
+        get() {
+            let name: string = this.getDataValue('name');
+            let lastName: string = this.getDataValue('lastName');
+            return `${name} ${lastName}`;
+        }
+    },
+    firstLetterOfName: {
+        type: DataTypes.VIRTUAL,
+        get() {
+            let name: string = this.getDataValue('name');
+            return name.charAt(0);
+        }
+    },
     age: {
         type: DataTypes.INTEGER,
         defaultValue: 18,
