@@ -5,12 +5,15 @@ import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
 
-    let results = await User.findAll({where: {name: 'Fulano'}});
-    if(results.length > 0) {
-        let usuario = results[0];
+    const [usuario, created] = await User.findOrCreate({
+        where: {name: 'Ciclano Silva'},
+        defaults: {
+            age: 80
+        }
+    });
 
-        await usuario.destroy();
-    }
+    console.log("USUARIO", usuario);
+    console.log("CREATED", created);
     
 
     let users = await User.findAll();
