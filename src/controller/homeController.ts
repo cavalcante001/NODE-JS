@@ -1,10 +1,29 @@
 import { Request, Response } from 'express';
+import {Op} from 'sequelize';
 import { Product } from '../models/Product';
 import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
+    let searchName: string = 'pa';
 
-    let users = await User.findAll();
+    let users = await User.findAll({
+        where: {
+            name: {
+                [Op.like]: `%${searchName}%`
+                // [Op.notIn]: [30,55]
+                // [Op.in]: [30,55]
+                // [Op.notBetween]: [40, 100]
+                // [Op.gt]: 40, // >40 
+                // [Op.gte]: 40, // >= 40 
+                // [Op.lt]: 40, // < 40] 
+                // [Op.lte]: 40, // <= 40]
+
+                // GT = Greather Than
+                // E = Equal
+                // LT = Lower Than
+            }
+        }        
+    });
 
 
 
