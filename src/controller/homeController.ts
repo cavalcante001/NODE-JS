@@ -8,21 +8,13 @@ export const home = async (req: Request, res: Response) => {
 
     let users = await User.findAll({
         where: {
-            name: {
-                [Op.like]: `%${searchName}%`
-                // [Op.notIn]: [30,55]
-                // [Op.in]: [30,55]
-                // [Op.notBetween]: [40, 100]
-                // [Op.gt]: 40, // >40 
-                // [Op.gte]: 40, // >= 40 
-                // [Op.lt]: 40, // < 40] 
-                // [Op.lte]: 40, // <= 40]
-
-                // GT = Greather Than
-                // E = Equal
-                // LT = Lower Than
+            age: {
+                [Op.gte]: 18
             }
-        }        
+        },
+        order: [
+            ['age', 'DESC']
+        ]
     });
 
 
