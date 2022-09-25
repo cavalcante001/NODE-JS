@@ -12,9 +12,8 @@ export const home = async (req: Request, res: Response) => {
                 [Op.gte]: 18
             }
         },
-        order: [
-            ['age', 'DESC']
-        ]
+        offset: 2,
+        limit: 1
     });
 
 
