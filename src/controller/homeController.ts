@@ -5,36 +5,18 @@ import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
 
-    // const user = User.build({
-    //     name: 'Fulano',
-    //     age: 25
-    // });
+    await User.update({age: 18}, {
+        where: {
+            age: {
+                [Op.lt]: 18
+            }
+        }
+    });
 
-    // await user.save();
-
-    // const user = await User.create({
-    //     name: 'Ciclano',
-    //     age: 39
-    // });
-
-    //build + save
-    //create
-    let searchName: string = 'pa';
+    
 
     let users = await User.findAll();
 
-
-
-
-
-
-
-    // try {
-    //     await sequelize.authenticate();
-    //     console.log("Conexão estabelecida com sucesso");
-    // } catch(error) {
-    //     console.log("Deu problema: ", error);
-    // }
     let age: number = 90;
     let showOld: boolean = false;
 
