@@ -12,26 +12,16 @@ export const home = async (req: Request, res: Response) => {
 
     // await user.save();
 
-    const user = await User.create({
-        name: 'Ciclano',
-        age: 39
-    });
-
-    console.log(user.name);
+    // const user = await User.create({
+    //     name: 'Ciclano',
+    //     age: 39
+    // });
 
     //build + save
     //create
     let searchName: string = 'pa';
 
-    let users = await User.findAll({
-        where: {
-            age: {
-                [Op.gte]: 18
-            }
-        },
-        offset: 2,
-        limit: 1
-    });
+    let users = await User.findAll();
 
 
 

@@ -17,4 +17,6 @@ router.get('/idade', UserController.idade);
 
 router.get('/idade-resultado', UserController.idade_post);
 
+router.post('/novousuario', UserController.novo_usuario_post);
+
 export default router;

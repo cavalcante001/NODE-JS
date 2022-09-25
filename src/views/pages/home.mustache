@@ -1,5 +1,13 @@
 {{>partials/header}}
 
+    <fieldset>
+        <form method="POST" action="/novousuario">
+            <input type="text" name="name" placeholder="Digite um nome" /><br/><br/>
+            <input type="text" name="age" placeholder="Digite uma idade" /><br/><br/>
+            <input type="submit" value="Inserir Usuário"/>
+        </form>
+    </fieldset>
+
     <h2>Usuários do banco</h2>
     <ul>
         {{#users}}
