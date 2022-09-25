@@ -1,4 +1,11 @@
 {{>partials/header}}
+
+    <h2>Usuários do banco</h2>
+    <ul>
+        {{#users}}
+            <li>{{name}} - Idade: {{age}}</li>
+        {{/users}}
+    </ul>
   
     {{#user.showOld}}
     Opa {{user.nome}}, você já tem {{user.idade}} anos?
