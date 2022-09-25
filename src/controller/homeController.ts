@@ -5,14 +5,18 @@ import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
 
-    await User.update({age: 18}, {
-        where: {
-            age: {
-                [Op.lt]: 18
-            }
-        }
+    let results = await User.findAll({
+        where: { id: 4 }
     });
 
+    if(results.length > 0) {
+        let usuario = results[0];
+        usuario.age = 70;
+
+        await usuario.save();
+    }
+
+    console.log(results)
     
 
     let users = await User.findAll();
