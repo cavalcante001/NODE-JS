@@ -4,6 +4,23 @@ import { Product } from '../models/Product';
 import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
+
+    // const user = User.build({
+    //     name: 'Fulano',
+    //     age: 25
+    // });
+
+    // await user.save();
+
+    const user = await User.create({
+        name: 'Ciclano',
+        age: 39
+    });
+
+    console.log(user.name);
+
+    //build + save
+    //create
     let searchName: string = 'pa';
 
     let users = await User.findAll({
