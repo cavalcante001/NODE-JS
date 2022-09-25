@@ -5,6 +5,11 @@ import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response) => {
 
+    await User.create({
+        name: 'Testador',
+        age: 15
+    })
+
     const [usuario, created] = await User.findOrCreate({
         where: {name: 'Ciclano Silva'},
         defaults: {
